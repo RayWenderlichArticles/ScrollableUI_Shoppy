@@ -42,6 +42,11 @@ public interface IStore
     public void UpdateWallet(float amount);
     public void AddToCart(GameObject item);
     public void RemoveFromCart(GameObject item);
+    public void UpdateStatus(string text);
+    public float GetDiscount();
     public void Buy();
-    public void Sell();
+    public string GetStatusTextSale();
+    public string GetStatusTextAddToCart();
+    public string GetStatusTextRemoveFromCart();
+    public string GetStatusTextPurchaseComplete();
 }

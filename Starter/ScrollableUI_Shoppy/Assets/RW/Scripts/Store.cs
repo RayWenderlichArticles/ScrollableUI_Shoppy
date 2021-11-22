@@ -36,36 +36,40 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.*/
 
 using System.Collections.Generic;
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 
 public class Store : MonoBehaviour, IStore
 {
-    [SerializeField] float wallet = 1000f;
-    [SerializeField] TextMeshProUGUI walletText;
-    [SerializeField] TextMeshProUGUI statusText;
-    [SerializeField] GameObject[] items;
-    [SerializeField] int amount = 10;
-    [SerializeField] float discount = 0.3f;
-    [SerializeField] List<GameObject> cart;
+    [SerializeField] private float wallet = 1000f;
+    [SerializeField] private TextMeshProUGUI walletText;
+    [SerializeField] private TextMeshProUGUI statusText;
+    [SerializeField] private GameObject[] items;
+    [SerializeField] private int amount = 10;
+    [SerializeField] private float discount = 0.3f;
+    [SerializeField] private List<GameObject> cart;
 
     [Header("Status Texts")]
-    [SerializeField] string saleStatus = "We have an amazing sale on!";
-    [SerializeField] string addToCartStatus = "Added to cart...";
+    [SerializeField] private string saleStatus = "We have an amazing sale on!";
+    [SerializeField] private string addToCartStatus = "Added to cart...";
+    [SerializeField] private string removeFromCartStatus = "Removed from cart...";
+    [SerializeField] private string itemsPurchasedStatus = "Purchase complete...";
 
-    void Start()
+    private void Start()
     {
         UpdateWallet(0);
         for (int i = 0; i < amount; i++)
         {
-            Instantiate(items[Random.Range(0, items.Length)], transform);
+            StoreItem item = Instantiate(items[Random.Range(0, items.Length)], transform).GetComponentInChildren<StoreItem>();
+            item.Initialize(this);
         }
     }
 
-    public void UpdateWallet(float amount)
+    public void UpdateWallet(float price)
     {
-        wallet += amount;
-        walletText.text = $"WALLET: ${wallet.ToString()}";
+        wallet += price;
+        walletText.text = $"WALLET: ${wallet.ToString(CultureInfo.CurrentCulture)}";
     }
 
     public void AddToCart(GameObject item)
@@ -99,11 +103,11 @@ public class Store : MonoBehaviour, IStore
         }
 
         UpdateWallet(totalPrice - (totalPrice * discount));
-    }
 
-    public void Sell()
-    {
-        throw new System.NotImplementedException();
+        totalPrice = 0f;
+        cart.Clear();
+
+        UpdateStatus(GetStatusTextPurchaseComplete());
     }
 
     public string GetStatusTextSale()
@@ -114,5 +118,13 @@ public class Store : MonoBehaviour, IStore
     public string GetStatusTextAddToCart()
     {
         return addToCartStatus;
+    }
+    public string GetStatusTextRemoveFromCart()
+    {
+        return removeFromCartStatus;
+    }
+    public string GetStatusTextPurchaseComplete()
+    {
+        return itemsPurchasedStatus;
     }
 }

@@ -35,45 +35,45 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.*/
 
+using System.Globalization;
 using TMPro;
 using UnityEngine;
 
 public class StoreItem : MonoBehaviour
 {
-    [SerializeField] int id = 0;
-    [SerializeField] string itemName;
-    [SerializeField] float price = 5f;
-    [SerializeField] GameObject outline;
-    [SerializeField] TextMeshProUGUI priceText;
-    [SerializeField] TextMeshProUGUI nameText;
-    [SerializeField] GameObject salePanel;
+    [SerializeField] private int id = 0;
+    [SerializeField] private string itemName;
+    [SerializeField] private float price = 5f;
+    [SerializeField] private GameObject outline;
+    [SerializeField] private TextMeshProUGUI priceText;
+    [SerializeField] private TextMeshProUGUI nameText;
+    [SerializeField] private GameObject salePanel;
 
-    Store store;
-    bool isSelected = false;
-    float discount = 0;
+    private Store store;
+    private bool isSelected = false;
+    private float discount = 0;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        store = FindObjectOfType<Store>();
-        discount = store.GetDiscount();
-        nameText.text = itemName;
-        ApplyDiscount();
-    }
-
-    void ApplyDiscount()
+    private void ApplyDiscount()
     {
         if (discount > 0)
         {
             ShowSaleBanner();
             store.UpdateStatus(store.GetStatusTextSale());
-            priceText.text = $"${(price - (price * discount)).ToString()} (${price.ToString()})";
+            priceText.text = $"${(price - (price * discount)).ToString(CultureInfo.CurrentCulture)} (${price.ToString(CultureInfo.CurrentCulture)})";
         }
         else
         {
-            priceText.text = $"${price.ToString()}";
+            priceText.text = $"${price.ToString(CultureInfo.CurrentCulture)}";
             salePanel.SetActive(false);
         }
+    }
+
+    public void Initialize(IStore store)
+    {
+        this.store = (Store)store;
+        discount = this.store.GetDiscount();
+        nameText.text = itemName;
+        ApplyDiscount();
     }
 
     public float GetPrice()
@@ -95,14 +95,19 @@ public class StoreItem : MonoBehaviour
 
     public void Select()
     {
-        store.UpdateStatus(store.GetStatusTextAddToCart());
 
         isSelected = !isSelected;
         outline.SetActive(isSelected);
 
         if (isSelected)
+        {
+            store.UpdateStatus(store.GetStatusTextAddToCart());
             store.AddToCart(transform.parent.gameObject);
+        }
         else
+        {
+            store.UpdateStatus(store.GetStatusTextRemoveFromCart());
             store.RemoveFromCart(transform.parent.gameObject);
+        }
     }
 }
