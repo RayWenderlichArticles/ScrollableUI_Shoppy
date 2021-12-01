@@ -110,6 +110,18 @@ public class Store : MonoBehaviour, IStore
         UpdateStatus(GetStatusTextPurchaseComplete());
     }
 
+    public float GetTotalPriceOfCart()
+    {
+        var totalPrice = 0f;
+
+        foreach (var item in cart)
+        {
+            totalPrice += item.GetComponentInChildren<StoreItem>().GetPrice();
+        }
+
+        return totalPrice - (totalPrice * discount);
+    }
+
     public string GetStatusTextSale()
     {
         return saleStatus;

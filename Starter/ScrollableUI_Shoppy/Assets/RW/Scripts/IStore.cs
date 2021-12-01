@@ -45,6 +45,7 @@ public interface IStore
     public void UpdateStatus(string text);
     public float GetDiscount();
     public void Buy();
+    public float GetTotalPriceOfCart();
     public string GetStatusTextSale();
     public string GetStatusTextAddToCart();
     public string GetStatusTextRemoveFromCart();

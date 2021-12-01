@@ -101,13 +101,14 @@ public class StoreItem : MonoBehaviour
 
         if (isSelected)
         {
-            store.UpdateStatus(store.GetStatusTextAddToCart());
             store.AddToCart(transform.parent.gameObject);
+            store.UpdateStatus($"{store.GetStatusTextAddToCart()} | Total Cost: ${store.GetTotalPriceOfCart().ToString()}");
+            
         }
         else
         {
-            store.UpdateStatus(store.GetStatusTextRemoveFromCart());
             store.RemoveFromCart(transform.parent.gameObject);
+            store.UpdateStatus($"{store.GetStatusTextRemoveFromCart()} | Total Cost: ${store.GetTotalPriceOfCart().ToString()}");
         }
     }
 }
