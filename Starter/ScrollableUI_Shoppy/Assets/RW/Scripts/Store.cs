@@ -35,20 +35,29 @@ WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER
 DEALINGS IN THE SOFTWARE.*/
 
+using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
+using System.Numerics;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
+using Vector2 = System.Numerics.Vector2;
+using Vector3 = UnityEngine.Vector3;
 
 public class Store : MonoBehaviour, IStore
 {
     [SerializeField] private float wallet = 1000f;
     [SerializeField] private TextMeshProUGUI walletText;
     [SerializeField] private TextMeshProUGUI statusText;
+    [SerializeField] private TextMeshProUGUI countText;
     [SerializeField] private GameObject[] items;
     [SerializeField] private int amount = 10;
     [SerializeField] private float discount = 0.3f;
     [SerializeField] private List<GameObject> cart;
+    [SerializeField] private ScrollRect scrollRect;
+
+    private static int ITEMS_PER_ROW = 3;
 
     [Header("Status Texts")]
     [SerializeField] private string saleStatus = "We have an amazing sale on!";
@@ -61,15 +70,16 @@ public class Store : MonoBehaviour, IStore
         UpdateWallet(0);
         for (int i = 0; i < amount; i++)
         {
-            StoreItem item = Instantiate(items[Random.Range(0, items.Length)], transform).GetComponentInChildren<StoreItem>();
+            StoreItem item = Instantiate(items[Random.Range(0, items.Length)], transform).GetComponent<StoreItem>();
             item.Initialize(this);
         }
+        scrollRect.onValueChanged.AddListener(GetScrollValue);
     }
 
     public void UpdateWallet(float price)
     {
         wallet += price;
-        walletText.text = $"WALLET: ${wallet.ToString(CultureInfo.CurrentCulture)}";
+        walletText.text = $"W ${wallet.ToString(CultureInfo.CurrentCulture)}";
     }
 
     public void AddToCart(GameObject item)
@@ -87,6 +97,12 @@ public class Store : MonoBehaviour, IStore
         statusText.text = text;
     }
 
+    public void GetScrollValue(UnityEngine.Vector2 pos)
+    {
+        float finalAmount = Mathf.Round((1 - pos.y + 0.06f) * 8.5f);
+        countText.text = (ITEMS_PER_ROW * finalAmount + ITEMS_PER_ROW - (ITEMS_PER_ROW * 2 - 1)) + "-" + (ITEMS_PER_ROW * finalAmount + ITEMS_PER_ROW + "/" + amount);
+    }
+
     public float GetDiscount()
     {
         return discount;
@@ -100,6 +116,8 @@ public class Store : MonoBehaviour, IStore
         {
             totalPrice -= item.GetComponentInChildren<StoreItem>().GetPrice();
             item.GetComponentInChildren<StoreItem>().TurnSelectionOutlineOff();
+            Vector3.Lerp(item.transform.localScale, Vector3.zero, 1f);
+            Destroy(item);
         }
 
         UpdateWallet(totalPrice - (totalPrice * discount));

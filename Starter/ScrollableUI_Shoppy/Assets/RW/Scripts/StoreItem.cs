@@ -72,7 +72,7 @@ public class StoreItem : MonoBehaviour
     {
         this.store = (Store)store;
         discount = this.store.GetDiscount();
-        nameText.text = itemName;
+        nameText.text = itemName.ToUpper();
         ApplyDiscount();
     }
 
@@ -83,7 +83,7 @@ public class StoreItem : MonoBehaviour
 
     public void ShowSaleBanner()
     {
-        salePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"ON SALE\n{discount * 100f}% OFF!";
+        salePanel.transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = $"{discount * 100f}% OFF!";
         salePanel.SetActive(true);
     }
 
@@ -101,13 +101,13 @@ public class StoreItem : MonoBehaviour
 
         if (isSelected)
         {
-            store.AddToCart(transform.parent.gameObject);
+            store.AddToCart(gameObject);
             store.UpdateStatus($"{store.GetStatusTextAddToCart()} | Total Cost: ${store.GetTotalPriceOfCart().ToString()}");
             
         }
         else
         {
-            store.RemoveFromCart(transform.parent.gameObject);
+            store.RemoveFromCart(gameObject);
             store.UpdateStatus($"{store.GetStatusTextRemoveFromCart()} | Total Cost: ${store.GetTotalPriceOfCart().ToString()}");
         }
     }
