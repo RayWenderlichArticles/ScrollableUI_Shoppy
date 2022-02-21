@@ -50,11 +50,14 @@ public class Store : MonoBehaviour, IStore
     [SerializeField] private float wallet = 1000f;
     [SerializeField] private TextMeshProUGUI walletText;
     [SerializeField] private TextMeshProUGUI statusText;
+    [SerializeField] private TextMeshProUGUI countText;
     [SerializeField] private GameObject[] items;
     [SerializeField] private int amount = 10;
     [SerializeField] private float discount = 0.3f;
     [SerializeField] private List<GameObject> cart;
     [SerializeField] private ScrollRect scrollRect;
+
+    private static int ITEMS_PER_ROW = 3;
 
     [Header("Status Texts")]
     [SerializeField] private string saleStatus = "We have an amazing sale on!";
@@ -96,7 +99,8 @@ public class Store : MonoBehaviour, IStore
 
     public void GetScrollValue(UnityEngine.Vector2 pos)
     {
-        Debug.Log(amount * pos);
+        float finalAmount = Mathf.Round((1 - pos.y + 0.06f) * 8.5f);
+        countText.text = (ITEMS_PER_ROW * finalAmount + ITEMS_PER_ROW - (ITEMS_PER_ROW * 2 - 1)) + "-" + (ITEMS_PER_ROW * finalAmount + ITEMS_PER_ROW + "/" + amount);
     }
 
     public float GetDiscount()
