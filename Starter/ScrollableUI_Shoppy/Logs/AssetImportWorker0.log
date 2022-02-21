@@ -1,0 +1,181 @@
+Using pre-set license
+Built from '2020.3/staging' branch; Version is '2020.3.11f1 (99c7afb366b3) revision 10078127'; Using compiler version '192528614'; Build Type 'Release'
+OS: 'Windows 10 Home; OS build 19044.1466; Version 2009; 64bit' Language: 'en' Physical Memory: 32703 MB
+BatchMode: 1, IsHumanControllingUs: 0, StartBugReporterOnCrash: 0, Is64bit: 1, IsPro: 0
+
+ COMMAND LINE ARGUMENTS:
+D:\Program Files\Unity\Hub\Editor\2020.3.11f1\Editor\Unity.exe
+-adb2
+-batchMode
+-noUpm
+-name
+AssetImportWorker0
+-projectPath
+D:/UnityProjects/RW/ray_wenderlich_projects/1 Articles/ScrollableUI_Shoppy/Starter/ScrollableUI_Shoppy
+-logFile
+Logs/AssetImportWorker0.log
+-srvPort
+62821
+Successfully changed project path to: D:/UnityProjects/RW/ray_wenderlich_projects/1 Articles/ScrollableUI_Shoppy/Starter/ScrollableUI_Shoppy
+D:/UnityProjects/RW/ray_wenderlich_projects/1 Articles/ScrollableUI_Shoppy/Starter/ScrollableUI_Shoppy
+Using Asset Import Pipeline V2.
+Refreshing native plugins compatible for Editor in 28.56 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Initialize engine version: 2020.3.11f1 (99c7afb366b3)
+[Subsystems] Discovering subsystems at path D:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Resources/UnitySubsystems
+[Subsystems] Discovering subsystems at path D:/UnityProjects/RW/ray_wenderlich_projects/1 Articles/ScrollableUI_Shoppy/Starter/ScrollableUI_Shoppy/Assets
+GfxDevice: creating device client; threaded=0
+Direct3D:
+    Version:  Direct3D 11.0 [level 11.1]
+    Renderer: NVIDIA GeForce RTX 3070 (ID=0x2484)
+    Vendor:   
+    VRAM:     8043 MB
+    Driver:   30.0.15.1123
+Initialize mono
+Mono path[0] = 'D:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/Managed'
+Mono path[1] = 'D:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/lib/mono/unityjit'
+Mono config path = 'D:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/MonoBleedingEdge/etc'
+Using monoOptions --debugger-agent=transport=dt_socket,embedding=1,server=y,suspend=n,address=127.0.0.1:56316
+Begin MonoManager ReloadAssembly
+Registering precompiled unity dll's ...
+Register platform support module: D:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WebGLSupport/UnityEditor.WebGL.Extensions.dll
+Register platform support module: D:/Program Files/Unity/Hub/Editor/2020.3.11f1/Editor/Data/PlaybackEngines/WindowsStandaloneSupport/UnityEditor.WindowsStandalone.Extensions.dll
+Registered in 0.004287 seconds.
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 22.98 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  2.121 seconds
+Platform modules already initialized, skipping
+Registering precompiled user dll's ...
+Registered in 0.006532 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.924 seconds
+Platform modules already initialized, skipping
+========================================================================
+Worker process is ready to serve import requests
+Launched and connected shader compiler UnityShaderCompiler.exe after 0.03 seconds
+Refreshing native plugins compatible for Editor in 0.25 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1386 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 65.0 MB.
+System memory in use after: 65.1 MB.
+
+Unloading 18 unused Assets to reduce memory usage. Loaded Objects now: 1820.
+Total: 1.775400 ms (FindLiveObjects: 0.122300 ms CreateObjectMapping: 0.032900 ms MarkObjects: 1.568200 ms  DeleteObjects: 0.050900 ms)
+
+========================================================================
+Received Import Request.
+  path: Assets/RW/Prefabs/Shield.prefab
+  artifactKey: Guid(a0a8d6bc6407a3e43ab1bc6ed561ff99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/Shield.prefab using Guid(a0a8d6bc6407a3e43ab1bc6ed561ff99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '1f20123fc9fa20d02baa66d93ebb51fb') in 0.045416 seconds
+  Import took 0.047329 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000245 seconds.
+  path: Assets/RW/Prefabs/Sword.prefab
+  artifactKey: Guid(e2a77fab97a1d0d479236ccaaf546c0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/Sword.prefab using Guid(e2a77fab97a1d0d479236ccaaf546c0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7072d748fe725e566719e14b2762ad81') in 0.016184 seconds
+  Import took 0.018460 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.008002 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.842 seconds
+Platform modules already initialized, skipping
+Shader 'TextMeshPro/Distance Field Overlay': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'TextMeshPro/Distance Field SSD': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Shader 'TextMeshPro/Distance Field': fallback shader 'TextMeshPro/Mobile/Distance Field' not found
+Refreshing native plugins compatible for Editor in 0.26 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1396 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 67.1 MB.
+System memory in use after: 66.5 MB.
+
+Unloading 26 unused Assets to reduce memory usage. Loaded Objects now: 1826.
+Total: 1.701800 ms (FindLiveObjects: 0.113200 ms CreateObjectMapping: 0.031400 ms MarkObjects: 1.322400 ms  DeleteObjects: 0.233900 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 37.026613 seconds.
+  path: Assets/RW/Scenes/Starter.unity
+  artifactKey: Guid(1c21786807de8344ca905bdf7cbf8d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Scenes/Starter.unity using Guid(1c21786807de8344ca905bdf7cbf8d8d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '8996d104fd932fed7e7261608f4d474a') in 0.013370 seconds
+  Import took 0.015514 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 19.406359 seconds.
+  path: Assets/RW/Prefabs/ItemBase.prefab
+  artifactKey: Guid(fbe57b90799bec24db540857ea277a20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/ItemBase.prefab using Guid(fbe57b90799bec24db540857ea277a20) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '9b6a408579c38526c96029b6a83dd53a') in 0.057552 seconds
+  Import took 0.059608 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000243 seconds.
+  path: Assets/RW/Prefabs/Shield.prefab
+  artifactKey: Guid(a0a8d6bc6407a3e43ab1bc6ed561ff99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/Shield.prefab using Guid(a0a8d6bc6407a3e43ab1bc6ed561ff99) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'edbece7d681b73eb32345e067458704b') in 0.013011 seconds
+  Import took 0.014971 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000202 seconds.
+  path: Assets/RW/Prefabs/Sword.prefab
+  artifactKey: Guid(e2a77fab97a1d0d479236ccaaf546c0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/Sword.prefab using Guid(e2a77fab97a1d0d479236ccaaf546c0d) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f3bb407f56352283cede9f50117ad06b') in 0.014067 seconds
+  Import took 0.016103 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000192 seconds.
+  path: Assets/RW/Prefabs/StorePanel.prefab
+  artifactKey: Guid(ac3711a41b7f38340ba53cb3be809f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/StorePanel.prefab using Guid(ac3711a41b7f38340ba53cb3be809f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'c494b60d05d0fe9a4b75cd99d4103067') in 0.026424 seconds
+  Import took 0.028534 seconds .
+
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.005952 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Native extension for WebGL target not found
+Refreshing native plugins compatible for Editor in 0.27 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.867 seconds
+Platform modules already initialized, skipping
+Refreshing native plugins compatible for Editor in 0.26 ms, found 2 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 1396 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 67.2 MB.
+System memory in use after: 66.6 MB.
+
+Unloading 29 unused Assets to reduce memory usage. Loaded Objects now: 1829.
+Total: 1.848800 ms (FindLiveObjects: 0.118600 ms CreateObjectMapping: 0.033700 ms MarkObjects: 1.438400 ms  DeleteObjects: 0.257300 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 5.240442 seconds.
+  path: Assets/RW/Prefabs/StorePanel.prefab
+  artifactKey: Guid(ac3711a41b7f38340ba53cb3be809f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/RW/Prefabs/StorePanel.prefab using Guid(ac3711a41b7f38340ba53cb3be809f17) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'd1886cd2a42a5d8a68b26bd9c6c95466') in 0.061274 seconds
+  Import took 0.063273 seconds .
+
+AssetImportWorkerClient::OnTransportError - code=2 error=End of file
