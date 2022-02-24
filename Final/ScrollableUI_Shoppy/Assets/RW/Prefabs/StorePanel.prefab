@@ -1078,7 +1078,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4154123911816231821}
   m_HandleRect: {fileID: 4154123911816231820}
   m_Direction: 2
-  m_Value: 0
+  m_Value: 1
   m_Size: 1
   m_NumberOfSteps: 0
   m_OnValueChanged:
@@ -1121,7 +1121,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 309, y: 0.00015830994}
+  m_AnchoredPosition: {x: 309, y: 0}
   m_SizeDelta: {x: -309, y: 0}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &4154123912192113338
@@ -1141,7 +1141,6 @@ MonoBehaviour:
   statusText: {fileID: 71404468233712368}
   countText: {fileID: 4154123912796843615}
   items:
-  - {fileID: 2348378072851487173, guid: a0a8d6bc6407a3e43ab1bc6ed561ff99, type: 3}
   - {fileID: 7766146889923893952, guid: e2a77fab97a1d0d479236ccaaf546c0d, type: 3}
   amount: 30
   discount: 0.3

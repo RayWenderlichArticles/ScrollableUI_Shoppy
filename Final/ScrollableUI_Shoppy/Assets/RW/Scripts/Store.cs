@@ -100,7 +100,8 @@ public class Store : MonoBehaviour, IStore
     public void GetScrollValue(UnityEngine.Vector2 pos)
     {
         float finalAmount = Mathf.Round((1 - pos.y + 0.06f) * 8.5f);
-        countText.text = (ITEMS_PER_ROW * finalAmount + ITEMS_PER_ROW - (ITEMS_PER_ROW * 2 - 1)) + "-" + (ITEMS_PER_ROW * finalAmount + ITEMS_PER_ROW + "/" + amount);
+        countText.text = (ITEMS_PER_ROW * finalAmount + ITEMS_PER_ROW - (ITEMS_PER_ROW * 2 - 1)) + "-" +
+                         (ITEMS_PER_ROW * finalAmount + ITEMS_PER_ROW + "/" + amount);
     }
 
     public float GetDiscount()
